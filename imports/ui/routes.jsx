@@ -1,0 +1,25 @@
+import React from 'react';
+import { createBrowserRouter } from "react-router-dom";
+import Layout from "./layout";
+
+const HomePage = React.lazy(() => import('./pages/home'));
+const AskQuestionPage = React.lazy(() => import('./pages/ask-question'));
+const NotFound = React.lazy(() => import('./pages/not-found'));
+
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Layout />,
+    errorElement: <NotFound />,
+    children: [
+      {
+        path: "home",
+        element: <HomePage />,
+      },
+      {
+        path: "ask",
+        element: <AskQuestionPage />,
+      },
+    ],
+  },
+]);

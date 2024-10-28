@@ -1,0 +1,36 @@
+{
+  "name": "meteor-app",
+  "private": true,
+  "scripts": {
+    "start": "meteor run",
+    "test": "meteor test --once --driver-package meteortesting:mocha",
+    "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
+    "visualize": "meteor --production --extra-packages bundle-visualizer"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.26.0",
+    "autoprefixer": "^10.4.20",
+    "flowbite": "^2.5.2",
+    "flowbite-react": "^0.10.2",
+    "meteor-node-stubs": "^1.2.10",
+    "postcss": "^8.4.47",
+    "postcss-load-config": "^6.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router": "^6.27.0",
+    "react-router-dom": "^6.27.0",
+    "tailwindcss": "^3.4.14"
+  },
+  "meteor": {
+    "mainModule": {
+      "client": "imports/ui/main.jsx",
+      "server": "server/main.js"
+    },
+    "testModule": "tests/main.js"
+  },
+  "devDependencies": {
+    "@types/meteor": "^2.9.8",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1"
+  }
+}
