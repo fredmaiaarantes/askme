@@ -4,7 +4,10 @@ export const Questions = new Mongo.Collection("questions");
 
 const schema = {
   _id: String,
-  text: String,
+  userId: String,
+  userAvatarUrl: String,
+  userName: String,
+  description: String,
   answered: Boolean,
   createdAt: Date,
 };

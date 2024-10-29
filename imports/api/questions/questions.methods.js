@@ -23,9 +23,13 @@ export async function checkQuestionOwner({ questionId }) {
 async function insertQuestion({ description }) {
   check(description, String);
   checkLoggedIn();
+  const user = await Meteor.userAsync();
   const question = {
     description,
-    userId: Meteor.userId(),
+    answered: false,
+    userId: user._id,
+    userAvatarUrl: user.profile?.avatar,
+    userName: user.profile?.name,
     createdAt: new Date(),
   };
   return Questions.insertAsync(question);
