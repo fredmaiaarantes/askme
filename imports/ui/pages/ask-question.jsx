@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Card, Label, Textarea, TextInput } from "flowbite-react";
-import {Link, useNavigate} from "react-router-dom";
-import {useUser} from "meteor/react-meteor-accounts";
+import { Link, useNavigate } from "react-router-dom";
+import { useUser } from "meteor/react-meteor-accounts";
 
 export default function AskQuestion() {
   const user = useUser();

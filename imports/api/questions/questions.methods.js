@@ -8,7 +8,7 @@ function checkLoggedIn() {
   }
 }
 
-export async function checkQuestionOwner({ questionId }) {
+export async function checkMustBeQuestionOwner({ questionId }) {
   check(questionId, String);
   checkLoggedIn();
   const question = await Questions.findOneAsync({
@@ -16,7 +16,7 @@ export async function checkQuestionOwner({ questionId }) {
     userId: Meteor.userId(),
   });
   if (!question) {
-    throw new Meteor.Error('Error', 'Access denied.');
+    throw new Meteor.Error('Error', 'You cannot remove a question that you do not own.');
   }
 }
 
@@ -37,7 +37,7 @@ async function insertQuestion({ description }) {
 
 async function removeQuestion({ questionId }) {
   check(questionId, String);
-  await checkQuestionOwner({ questionId });
+  await checkMustBeQuestionOwner({ questionId });
   return Questions.removeAsync(questionId);
 }
 
