@@ -1,7 +1,7 @@
 import React, {useContext} from 'react';
 import { Button, Card, Label, Textarea, TextInput } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
-import {mockQuestions, mockUser} from "../data";
+import {mockUser} from "../data";
 import {MyContext} from "../components/context";
 
 export default function AskQuestion() {
