@@ -1,16 +1,15 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import { Button, Card, Modal } from "flowbite-react";
 import { QuestionListItem } from "../components/question-list-item";
 import { Link } from "react-router-dom";
-import { useUserId } from 'meteor/react-meteor-accounts';
-import { useFind, useSubscribe } from "meteor/react-meteor-data";
-import { Questions } from "../../api/questions/questions";
 import { HiOutlineExclamationCircle } from "react-icons/hi";
+import { mockUser } from "../data";
+import { MyContext } from "../components/context";
 
 const RemovalConfirmation = ({openModal, setOpenModal, questionId }) => {
-
+  const { questions, setQuestions } = useContext(MyContext);
   const removeQuestion = async ({ questionId }) => {
-    await Meteor.callAsync('removeQuestion', { questionId });
+    setQuestions(questions.filter(q => q._id !== questionId));
     setOpenModal(false);
   }
 
@@ -40,9 +39,9 @@ const RemovalConfirmation = ({openModal, setOpenModal, questionId }) => {
 export default function Home() {
   const [openModal, setOpenModal] = useState(false);
   const [removalQuestionId, setRemovalQuestionId] = useState(null);
-  const userId = useUserId();
-  const isReady = useSubscribe('questions');
-  const questions = useFind(() => Questions.find({}, { sort: { createdAt: -1 } }), []);
+  const { questions } = useContext(MyContext);
+  const isReady = true;
+  const userId = mockUser._id;
 
   return (
     <>

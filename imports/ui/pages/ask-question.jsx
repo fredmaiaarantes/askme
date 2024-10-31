@@ -1,21 +1,26 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Button, Card, Label, Textarea, TextInput } from "flowbite-react";
 import { Link, useNavigate } from "react-router-dom";
-import { useUser } from "meteor/react-meteor-accounts";
+import {mockQuestions, mockUser} from "../data";
+import {MyContext} from "../components/context";
 
 export default function AskQuestion() {
-  const user = useUser();
+  const user = mockUser;
   const navigate = useNavigate();
+  const { questions, setQuestions } = useContext(MyContext);
 
   const insertQuestion = async (event) => {
     event.preventDefault();
     const question = event.target.question.value;
-    try {
-      await Meteor.callAsync('insertQuestion', { description: question });
-      navigate('/');
-    } catch (error) {
-      console.error(error);
-    }
+    setQuestions([...questions, {
+      description: question,
+      answered: false,
+      userId: user._id,
+      userAvatarUrl: user.profile.avatar,
+      userName: user.profile.name,
+      createdAt: new Date(),
+    }]);
+    navigate('/');
   }
 
   return (
