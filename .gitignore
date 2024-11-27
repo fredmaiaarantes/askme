@@ -1,3 +1,4 @@
 node_modules/
 .idea
 private/settings.prod.json
+.vscode

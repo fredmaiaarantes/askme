@@ -10,6 +10,8 @@
     "incremental": true,
     "noEmit": true,
     "skipLibCheck": true,
+    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
 
     /* Strict Type-Checking Options */
     "strict": true,

@@ -1,0 +1,97 @@
+{
+  "compilerOptions": {
+    "checkJs": true,
+    "allowJs": true,
+    "jsx": "react",
+    "baseUrl": ".",
+    "paths": {
+      "/*": [
+        "./*"
+      ],
+      "meteor/reactive-var": [
+        "/Users/fmaia/.meteor/packages/reactive-var/1.0.13/web.browser/reactive-var.js"
+      ],
+      "meteor/es5-shim": [
+        "/Users/fmaia/.meteor/packages/es5-shim/4.8.1/web.browser/client.js",
+        "/Users/fmaia/.meteor/packages/es5-shim/4.8.1/web.browser/console.js",
+        "/Users/fmaia/.meteor/packages/es5-shim/4.8.1/web.browser/cordova.js",
+        "/Users/fmaia/.meteor/packages/es5-shim/4.8.1/web.browser/export_globals.js",
+        "/Users/fmaia/.meteor/packages/es5-shim/4.8.1/web.browser/import_globals.js"
+      ],
+      "meteor/hot-module-replacement": [
+        "/Users/fmaia/.meteor/packages/hot-module-replacement/0.5.4/web.browser/hot-api.js",
+        "/Users/fmaia/.meteor/packages/hot-module-replacement/0.5.4/web.browser/client.js",
+        "/Users/fmaia/.meteor/packages/hot-module-replacement/0.5.4/web.browser/server.js"
+      ],
+      "meteor/react-meteor-data": [
+        "/Users/fmaia/.meteor/packages/react-meteor-data/3.0.2/web.browser/index.js",
+        "/Users/fmaia/.meteor/packages/react-meteor-data/3.0.2/web.browser/suspense/index.js"
+      ],
+      "meteor/accounts-github": [
+        "/Users/fmaia/.meteor/packages/accounts-github/1.5.1/web.browser/notice.js",
+        "/Users/fmaia/.meteor/packages/accounts-github/1.5.1/web.browser/github.js"
+      ],
+      "meteor/service-configuration": [
+        "/Users/fmaia/.meteor/packages/service-configuration/1.3.5/web.browser/service_configuration_common.js",
+        "/Users/fmaia/.meteor/packages/service-configuration/1.3.5/web.browser/service_configuration_server.js"
+      ],
+      "meteor/dev-error-overlay": [
+        "/Users/fmaia/.meteor/packages/dev-error-overlay/0.1.3/web.browser/client.js"
+      ],
+      "meteor/mongo": [
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/local_collection_driver.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/collection/collection.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/asynchronous_cursor.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/doc_fetcher.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/mongo_common.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/mongo_connection.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/mongo_driver.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/mongo_utils.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/oplog_observe_driver.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/oplog_v2_converter.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/collection/collection_utils.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/collection/methods_async.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/collection/methods_index.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/collection/methods_replication.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.0.3-beta310.0/web.browser/collection/methods_sync.js"
+      ],
+      "meteor/ecmascript": [
+        "/Users/fmaia/.meteor/packages/ecmascript/0.16.9/web.browser/ecmascript.js"
+      ],
+      "meteor/shell-server": [
+        "/Users/fmaia/.meteor/packages/shell-server/0.6.0/web.browser/main.js",
+        "/Users/fmaia/.meteor/packages/shell-server/0.6.0/web.browser/shell-server.js"
+      ],
+      "meteor/jam:easy-schema": [
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/client.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/shape.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/attach/client.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/attach/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/check/client.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/check/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/config/client.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/config/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/defaults/client.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/defaults/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/defaults/shared.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/mongo/client.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/mongo/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/utils/server.js",
+        "/Users/fmaia/.meteor/packages/jam_easy-schema/1.5.1/web.browser/lib/utils/shared.js"
+      ],
+      "meteor/refapp:meteor-typescript": [
+        "/Users/fmaia/.meteor/packages/refapp_meteor-typescript/0.5.4/web.browser/meteor-typescript-plugin.js"
+      ]
+    }
+  },
+  "typeAcquisition": {
+    "include": [
+      "meteor"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
+}
