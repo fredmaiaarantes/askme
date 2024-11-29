@@ -27,6 +27,12 @@
     /* Module Resolution Options */
     "baseUrl": ".",
     "paths": {
+      "@/shared/*": ["src/shared/*"],
+      "@/private/*": ["private/*"],
+      "@/public/*": ["public/*"],
+      "@/api/*": ["src/api/*"],
+      "@/tests/*": ["tests/*"],
+      "@/ui/*": ["src/ui/*"],
       // Workaround for https://github.com/zodern/meteor-types/issues/10
       "meteor/react-meteor-data": [
         "./node_modules/@types/meteor/react-meteor-data.d.ts"

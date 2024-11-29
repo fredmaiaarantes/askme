@@ -1,16 +1,9 @@
-import { useFind, useTracker } from 'meteor/react-meteor-data';
-import { subscribeToAllQuestions } from '../../../api/questions/publications/questions.publications';
-import { Questions } from '../../../api/questions/questions';
+import { api } from '../../api';
 
 export const useQuestions = () => {
-  const isReady = useTracker(() => {
-    const handle = subscribeToAllQuestions();
-    return handle.ready();
-  });
+  const {
+    data: allQuestions,
+  } = api.questions.allQuestions.usePublication();
 
-  const questions = useFind(
-    () => Questions.find({}, { sort: { createdAt: -1 } }),
-    []
-  );
-  return { isReady, questions };
+  return { allQuestions };
 };

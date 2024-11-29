@@ -1,14 +1,15 @@
 {
   "name": "askme-app",
-  "private": true,
+  "private": true,                                                                                                                                                                    
   "scripts": {
-    "start": "meteor --exclude-archs web.browser.legacy,web.cordova --settings private/settings.json",
+    "start": "meteor npm i && meteor --exclude-archs web.browser.legacy,web.cordova --settings private/settings.json",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "clean-all": "rm -rf node_modules && meteor reset --db"
   },
   "dependencies": {
     "@babel/runtime": "^7.26.0",
@@ -30,10 +31,11 @@
   "meteor": {
     "mainModule": {
       "client": "src/ui/main.tsx",
-      "server": "src/api/main.ts"
+      "server": "server/main.ts"
     }
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.26.0",
     "@eslint/js": "^9.15.0",
     "@types/eslint__js": "^8.42.3",
     "@types/eslint-config-prettier": "^6.11.3",

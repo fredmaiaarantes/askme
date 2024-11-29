@@ -66,7 +66,7 @@ export const upvoteQuestion = async ({ questionId }: QuestionIdInput) => {
       { _id: questionId },
       {
           $inc: { votes: 1 },
-          $addToSet: { voters: loggedUserId },
+          $addToSet: { voters: loggedUserId! },
       }
   );
 }
