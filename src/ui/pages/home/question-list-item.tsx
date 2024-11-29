@@ -3,7 +3,7 @@ import { IoTrashBinOutline } from '@react-icons/all-files/io5/IoTrashBinOutline'
 import { FaCaretUp } from '@react-icons/all-files/fa/FaCaretUp';
 import { Meteor } from 'meteor/meteor';
 import { Question } from '../../../shared/schemas/question';
-import { upvoteQuestion } from '../../../api/questions/methods/questions.methods';
+import { upvoteQuestion } from '../../../api/questions/questions.methods';
 
 interface QuestionListItemProps {
   question: Question;

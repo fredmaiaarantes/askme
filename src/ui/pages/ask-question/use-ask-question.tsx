@@ -1,6 +1,6 @@
 import { FormEvent } from 'react';
-import { insertQuestion } from '../../../api/questions/methods/questions.methods';
 import { useNavigate } from 'react-router-dom';
+import { api } from '../../api';
 
 export const useAskQuestion = () => {
   const navigate = useNavigate();
@@ -13,7 +13,7 @@ export const useAskQuestion = () => {
     ) as HTMLTextAreaElement;
     const descriptionText = questionInput.value;
     try {
-      await insertQuestion({ description: descriptionText });
+      await api.questions.insertQuestion({ description: descriptionText });
       navigate('/');
     } catch (error) {
       console.error(error);

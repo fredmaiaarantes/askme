@@ -1,7 +1,7 @@
 import { HiOutlineExclamationCircle } from '@react-icons/all-files/hi/HiOutlineExclamationCircle';
 import React, { FC } from 'react';
 import { Meteor } from 'meteor/meteor';
-import { removeQuestion } from '../../../api/questions/methods/questions.methods';
+import { api } from '../../api';
 
 interface RemovalConfirmationProps {
   questionId: string;
@@ -14,7 +14,7 @@ export const RemovalConfirmation: FC<RemovalConfirmationProps> = ({
 }) => {
   const submitRemoveQuestion = async (params: { questionId: string }) => {
     try {
-      await removeQuestion(params);
+      await api.questions.removeQuestion(params);
     } catch (e) {
       console.error(e);
       if (e instanceof Meteor.Error) {
