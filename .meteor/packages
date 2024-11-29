@@ -23,6 +23,6 @@ jam:easy-schema
 accounts-github@1.5.1
 service-configuration@1.3.5
 react-meteor-accounts
-refapp:meteor-typescript
 dev-error-overlay@0.1.3
 zodern:types
+typescript

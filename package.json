@@ -3,6 +3,7 @@
   "private": true,                                                                                                                                                                    
   "scripts": {
     "start": "meteor npm i && meteor --exclude-archs web.browser.legacy,web.cordova --settings private/settings.json",
+    "clean-start": "meteor npm run clean-all && meteor npm run start",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
     "visualize": "meteor --production --extra-packages bundle-visualizer",
@@ -31,7 +32,7 @@
   "meteor": {
     "mainModule": {
       "client": "src/ui/main.tsx",
-      "server": "src/server/main.ts"
+      "server": "src/api/main.ts"
     }
   },
   "devDependencies": {
