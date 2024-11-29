@@ -12,8 +12,8 @@ export default function Home() {
   const [error, setError] = useState<Meteor.Error | null>(null);
   const [removalQuestionId, setRemovalQuestionId] = useState('');
   const userId = useUserId();
-  const { data: allQuestions } = api.questions.allQuestions.usePublication();
-  const isReady = true;
+  const { data: allQuestions } = api.questions.findAll.usePublication();
+
   return (
     <>
       <RemovalConfirmation questionId={removalQuestionId} setError={setError} />
@@ -31,9 +31,7 @@ export default function Home() {
             ) : null}
           </div>
           <div className="flow-root">
-            {!isReady ? (
-              <p>Loading...</p>
-            ) : allQuestions.length === 0 ? (
+            {allQuestions.length === 0 ? (
               <p>No questions available.</p>
             ) : (
               <ul className="divide-y divide-gray-200 dark:divide-gray-700">

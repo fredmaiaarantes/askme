@@ -1,3 +1,3 @@
 import { Questions } from '../questions';
 
-export const findQuestions = () => Questions.find();
+export const findAll = () => Questions.find();
