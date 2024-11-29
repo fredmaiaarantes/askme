@@ -1,6 +1,6 @@
 import { Mongo } from 'meteor/mongo';
 import { ID, Integer, Optional } from 'meteor/jam:easy-schema';
-import { Question } from '@/shared/schemas/question';
+import { Question } from './questions.schema';
 
 export const Questions = new Mongo.Collection<Question>('questions');
 

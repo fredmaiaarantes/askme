@@ -1,12 +1,12 @@
 import { createModule } from "grubba-rpc";
-import { InsertQuestionInputSchema, QuestionIdInputSchema } from "../../shared/schemas/question";
-import { insertQuestion, removeQuestion, upvoteQuestion } from "./questions.methods";
+import { InsertQuestionInputSchema, QuestionIdInputSchema } from "./questions.schema";
+import { findAll, findAllByUserId, insertQuestion, removeQuestion, upvoteQuestion } from "./questions.service";
 import { z } from "zod";
-import { findAll } from "./server/questions.publications";
 
 export const questionsModule = createModule("questions")
     .addMethod("insertQuestion", InsertQuestionInputSchema, insertQuestion)
     .addMethod("removeQuestion", QuestionIdInputSchema, removeQuestion)
     .addMethod("upvoteQuestion", QuestionIdInputSchema, upvoteQuestion)
     .addPublication("findAll", z.void(), findAll)
+    .addPublication("findAllByUserId", z.void(), findAllByUserId)
     .buildSubmodule();

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useUser } from 'meteor/react-meteor-accounts';
 import { useAskQuestion } from './use-ask-question';
-import { User } from '../../../shared/schemas/user';
+import { User } from '../../../api/users/users.schema';
 
 export default function AskQuestion() {
   const user = useUser() as User;

@@ -1,5 +1,5 @@
 import { Meteor } from 'meteor/meteor';
-import { User } from '../../shared/schemas/user';
+import { User } from '../users/users.schema';
 
 export function checkLoggedIn() {
   if (!Meteor.userId()) {

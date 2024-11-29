@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
 import { FaGithub } from '@react-icons/all-files/fa/FaGithub';
 import { useUser } from 'meteor/react-meteor-accounts';
-import { User } from '../../shared/schemas/user';
+import { User } from '../../api/users/users.schema';
 
 export default function Layout() {
   const user = useUser() as User;

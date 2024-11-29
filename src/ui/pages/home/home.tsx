@@ -6,13 +6,13 @@ import { RemovalConfirmation } from './removal-confirmation';
 import { Error } from '../../components/error';
 import { QuestionListItem } from './question-list-item';
 import { Question } from '../../../shared/schemas/question';
-import { api } from '../../api';
+import { client } from '../../client';
 
 export default function Home() {
   const [error, setError] = useState<Meteor.Error | null>(null);
   const [removalQuestionId, setRemovalQuestionId] = useState('');
   const userId = useUserId();
-  const { data: allQuestions } = api.questions.findAll.usePublication();
+  const { data: allQuestions } = client.questions.findAll.usePublication();
 
   return (
     <>

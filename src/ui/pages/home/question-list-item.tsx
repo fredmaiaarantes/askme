@@ -3,7 +3,7 @@ import { IoTrashBinOutline } from '@react-icons/all-files/io5/IoTrashBinOutline'
 import { FaCaretUp } from '@react-icons/all-files/fa/FaCaretUp';
 import { Meteor } from 'meteor/meteor';
 import { Question } from '../../../shared/schemas/question';
-import { api } from '../../api';
+import { client } from '../../client';
 
 interface QuestionListItemProps {
   question: Question;
@@ -32,7 +32,7 @@ export const QuestionListItem: React.FC<QuestionListItemProps> = ({
 
   const submitUpvote = async () => {
     try {
-      await api.questions.upvoteQuestion({ questionId: question._id });
+      await client.questions.upvoteQuestion({ questionId: question._id });
     } catch (e) {
       console.error(e);
       if (e instanceof Meteor.Error) {

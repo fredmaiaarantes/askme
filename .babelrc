@@ -10,7 +10,6 @@
       "module-resolver",
       {
         "alias": {
-          "@/shared": "/src/shared",
           "@/private": "/private",
           "@/public": "/public",
           "@/api": "/src/api",

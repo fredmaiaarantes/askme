@@ -1,7 +1,7 @@
 import { Questions } from './questions';
 import { checkLoggedIn, getLoggedUser } from '../common/auth';
 import { Meteor } from 'meteor/meteor';
-import { InsertQuestionInput, Question, QuestionIdInput } from '../../shared/schemas/question';
+import { InsertQuestionInput, Question, QuestionIdInput } from './questions.schema';
 import { check } from 'meteor/check';
 
 export const insertQuestion = async ({ description }: InsertQuestionInput) => {
@@ -70,3 +70,7 @@ export const upvoteQuestion = async ({ questionId }: QuestionIdInput) => {
       }
   );
 }
+
+export const findAll = () => Questions.find();
+
+export const findAllByUserId = () => Questions.find({ userId: Meteor.userId()!});
