@@ -5,8 +5,8 @@ import { Meteor } from 'meteor/meteor';
 import { RemovalConfirmation } from './removal-confirmation';
 import { Error } from '../../components/error';
 import { QuestionListItem } from './question-list-item';
-import { Question } from '../../../shared/schemas/question';
 import { client } from '../../client';
+import { Question } from '@/api/questions/questions.schema';
 
 export default function Home() {
   const [error, setError] = useState<Meteor.Error | null>(null);
