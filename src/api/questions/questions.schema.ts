@@ -11,11 +11,11 @@ export const QuestionSchema = z.object({
 });
 
 export const InsertQuestionInputSchema = z.object({
-  description: z.string()
+  description: z.string(),
 });
 
 export const QuestionIdInputSchema = z.object({
-  questionId: z.string()
+  questionId: z.string(),
 });
 
 export type InsertQuestionInput = z.infer<typeof InsertQuestionInputSchema>;

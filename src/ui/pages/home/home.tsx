@@ -21,11 +21,19 @@ export default function Home() {
         <div className="card-body">
           {error && <Error error={error} />}
           <div className="flex items-center justify-between">
-          <h1 className="text-lg leading-none text-gray-600 dark:text-gray-200" tabIndex={0}>
+            <h1
+              className="text-lg leading-none text-gray-600 dark:text-gray-200"
+              tabIndex={0}
+            >
               Last Questions
             </h1>
             {userId ? (
-              <Link role="button" className="btn btn-primary" to="/ask" aria-label="Ask a new question">
+              <Link
+                role="button"
+                className="btn btn-primary"
+                to="/ask"
+                aria-label="Ask a new question"
+              >
                 Ask a Question
               </Link>
             ) : null}
@@ -34,7 +42,10 @@ export default function Home() {
             {allQuestions.length === 0 ? (
               <p>No questions available.</p>
             ) : (
-              <ul className="divide-y divide-gray-200 dark:divide-gray-700" aria-label="List of questions">
+              <ul
+                className="divide-y divide-gray-200 dark:divide-gray-700"
+                aria-label="List of questions"
+              >
                 {allQuestions.map((question, index) => (
                   <QuestionListItem
                     key={question._id}

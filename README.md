@@ -13,8 +13,6 @@ https://askmeaquestion.meteorapp.com/
 - [MongoDB ](https://www.mongodb.com/) - A powerful NoSQL database.
 - [Galaxy Cloud](https://meteor.com/cloud) - A cloud solution engineered by the Meteor team.
 
-
-
 ### Features:
 
 - Sign In / Sign Up with GitHub
