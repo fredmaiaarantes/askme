@@ -18,6 +18,7 @@
       }
     }
   },
+  "adminUsernames": ["fredmaiaarantes"],
   "galaxy.meteor.com": {
     "env": {
       "ROOT_URL": "",

@@ -7,6 +7,7 @@ import {
   QuestionIdInput,
 } from './questions.schema';
 import { check } from 'meteor/check';
+import { Roles } from 'meteor/roles';
 
 export const insertQuestion = async ({ description }: InsertQuestionInput) => {
   checkLoggedIn();
@@ -22,12 +23,19 @@ export const insertQuestion = async ({ description }: InsertQuestionInput) => {
   return Questions.insertAsync(question);
 };
 
-async function checkMustBeQuestionOwner({ questionId }: QuestionIdInput) {
+async function checkLoggedUserAdminOrOwner({ questionId }: QuestionIdInput) {
   check(questionId, String);
   checkLoggedIn();
+
+  const userId = Meteor.userId()!;
+  const isAdmin = await Roles.userIsInRoleAsync(userId, "admin");
+  if (isAdmin) {
+    return;
+  }
+
   const question = await Questions.findOneAsync({
     _id: questionId,
-    userId: Meteor.userId()!,
+    userId,
   });
   if (!question) {
     throw new Meteor.Error(
@@ -39,7 +47,7 @@ async function checkMustBeQuestionOwner({ questionId }: QuestionIdInput) {
 
 export const removeQuestion = async ({ questionId }: QuestionIdInput) => {
   checkLoggedIn();
-  await checkMustBeQuestionOwner({ questionId });
+  await checkLoggedUserAdminOrOwner({ questionId });
   return Questions.removeAsync(questionId);
 };
 

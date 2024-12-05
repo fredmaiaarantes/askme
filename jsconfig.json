@@ -80,11 +80,23 @@
       ],
       "meteor/refapp:meteor-typescript": [
         "/Users/fmaia/.meteor/packages/refapp_meteor-typescript/0.5.4/web.browser/meteor-typescript-plugin.js"
+      ],
+      "meteor/roles": [
+        "/Users/fmaia/.meteor/packages/roles/1.0.0/web.browser/roles_client.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.0/web.browser/roles_common_async.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.0/web.browser/client/debug.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.0/web.browser/client/uiHelpers.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.0/web.browser/roles_server.js"
       ]
     }
   },
   "typeAcquisition": {
-    "include": ["meteor"]
+    "include": [
+      "meteor"
+    ]
   },
-  "exclude": ["node_modules", ".meteor"]
+  "exclude": [
+    "node_modules",
+    ".meteor"
+  ]
 }

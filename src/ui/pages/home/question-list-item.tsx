@@ -4,6 +4,7 @@ import { FaCaretUp } from '@react-icons/all-files/fa/FaCaretUp';
 import { Meteor } from 'meteor/meteor';
 import { client } from '../../client';
 import { Question } from '@/api/questions/questions.schema';
+import { Roles } from 'meteor/roles';
 
 interface QuestionListItemProps {
   question: Question;
@@ -21,6 +22,8 @@ export const QuestionListItem: React.FC<QuestionListItemProps> = ({
   setError,
 }) => {
   const isOwner = loggedUserId === question.userId;
+  const isAdmin = Roles.userIsInRole(loggedUserId, "admin");
+  const isOwnerOrAdmin = isOwner || isAdmin;
 
   const openRemoveQuestionConfirmation = () => {
     setRemovalQuestionId(question._id);
@@ -73,14 +76,14 @@ export const QuestionListItem: React.FC<QuestionListItemProps> = ({
         <div className="inline-flex items-center text-base font-semibold text-gray-900 dark:text-white">
           {loggedUserId && !isOwner && (
             <button
-              className="btn btn-outline btn-primary"
+              className="btn btn-outline btn-primary mr-1"
               onClick={submitUpvote}
             >
               <FaCaretUp className="h-5 w-5" />
               Upvote
             </button>
           )}
-          {isOwner && (
+          {isOwnerOrAdmin && (
             <button
               className="btn btn-outline"
               onClick={openRemoveQuestionConfirmation}
