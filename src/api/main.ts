@@ -6,14 +6,13 @@ import './api.module';
 Meteor.startup(async () => {
   console.log('Server has started!');
 
-  await createRolesAndAdmin();
+  await createRoles();
 });
 
-const createRolesAndAdmin = async () => {
-  const roles = Roles.getAllRoles().fetch();
+const createRoles = async () => {
+  const roles = await Roles.getAllRoles().fetchAsync();
 
   if (!roles.length) {
-    await Roles.createRoleAsync("user");
     await Roles.createRoleAsync("admin");
   }
 };
