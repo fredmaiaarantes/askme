@@ -20,3 +20,4 @@ https://askmeaquestion.meteorapp.com/
 - Add Questions
 - Remove Questions
 - Upvote Questions
+- Admin can remove any question
