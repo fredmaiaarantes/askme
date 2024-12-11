@@ -25,7 +25,7 @@ Accounts.onCreateUser(async (_options, meteorUser: Meteor.User) => {
   }
 
   const usernameAdmins = Meteor.settings.adminUsernames;
-  if (user.username && usernameAdmins.includes(user.username)) {
+  if (usernameAdmins && user.username && usernameAdmins.includes(user.username)) {
     await Roles.addUsersToRolesAsync(user._id, ["admin"]);
   }
 
