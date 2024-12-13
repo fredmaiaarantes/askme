@@ -1,6 +1,6 @@
 import { Accounts } from 'meteor/accounts-base';
 import { Meteor } from 'meteor/meteor';
-import { User } from '../users.schema';
+import type { User } from '../users.schema';
 import { Roles } from "meteor/roles";
 
 // The profile option is added directly to the new user document and published to the client.
@@ -14,7 +14,7 @@ Accounts.onCreateUser(async (_options, meteorUser: Meteor.User) => {
     };
   }
 
-  if (user.services && user.services.github) {
+  if (user.services?.github) {
     user.profile.name = user.services.github.name;
     user.profile.avatar = user.services.github.avatar;
     user.profile.email = user.services.github.email;
