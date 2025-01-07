@@ -1,4 +1,4 @@
-import { createModule } from 'grubba-rpc';
+import { createModule } from 'meteor-rpc';
 import {
   InsertQuestionInputSchema,
   QuestionIdInputSchema,

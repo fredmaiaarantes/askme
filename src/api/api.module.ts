@@ -1,4 +1,4 @@
-import { createModule } from 'grubba-rpc';
+import { createModule } from 'meteor-rpc';
 import { questionsModule } from './questions/questions.module';
 import './users/server/accounts';
 
