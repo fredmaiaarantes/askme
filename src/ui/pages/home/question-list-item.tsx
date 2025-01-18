@@ -5,12 +5,13 @@ import { Meteor } from 'meteor/meteor';
 import { client } from '../../client';
 import { Question } from '@/api/questions/questions.schema';
 import { Roles } from 'meteor/roles';
+import { useErrorHandler } from '../../hooks/use-error-handler';
+import { useModal } from '@/ui/hooks/use-modal';
 
 interface QuestionListItemProps {
   question: Question;
   isLast: boolean;
   loggedUserId: string | null;
-  setError: (error: Meteor.Error | null) => void;
   setRemovalQuestionId: (questionId: string) => void;
 }
 
@@ -19,35 +20,29 @@ export const QuestionListItem: React.FC<QuestionListItemProps> = ({
   isLast,
   loggedUserId,
   setRemovalQuestionId,
-  setError,
 }) => {
+  const { error, handleError } = useErrorHandler();
+  const { openModal } = useModal('removal-modal');
   const isOwner = loggedUserId === question.userId;
   const isAdmin = Roles.userIsInRole(loggedUserId, "admin");
   const isOwnerOrAdmin = isOwner || isAdmin;
 
   const openRemoveQuestionConfirmation = () => {
     setRemovalQuestionId(question._id);
-    const modal = document.getElementById(
-      'removal-modal'
-    ) as HTMLDialogElement | null;
-    modal?.showModal();
+    openModal();
   };
 
   const submitUpvote = async () => {
     try {
       await client.questions.upvoteQuestion({ questionId: question._id });
     } catch (e) {
-      console.error(e);
-      if (e instanceof Meteor.Error) {
-        setError(e as Meteor.Error);
-      } else {
-        setError(new Meteor.Error('Error', 'Unknown error'));
-      }
+      handleError(e);
     }
   };
 
   return (
     <li className={`py-3 sm:py-4 ${isLast ? 'pb-0 pt-3 sm:pt-4' : ''}`}>
+      {error && <div className="alert alert-error mb-4">{error.reason}</div>}
       <div className="flex items-center space-x-4">
         <div className="shrink-0 mx-auto max-w-xl text-center">
           <p className="text-xl font-bold text-gray-500 dark:text-gray-400">

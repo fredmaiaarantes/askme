@@ -1,42 +1,31 @@
 import { HiOutlineExclamationCircle } from '@react-icons/all-files/hi/HiOutlineExclamationCircle';
 import React, { FC } from 'react';
-import { Meteor } from 'meteor/meteor';
 import { client } from '../../client';
+import { useErrorHandler } from '../../hooks/use-error-handler';
+import { useModal } from '@/ui/hooks/use-modal';
 
 interface RemovalConfirmationProps {
   questionId: string;
-  setError: (error: Meteor.Error | null) => void;
 }
 
-export const RemovalConfirmation: FC<RemovalConfirmationProps> = ({
-  questionId,
-  setError,
-}) => {
+export const RemovalConfirmation: FC<RemovalConfirmationProps> = ({ questionId }) => {
+  const { error, handleError, clearError } = useErrorHandler();
+  const { closeModal } = useModal('removal-modal');
+
   const submitRemoveQuestion = async (params: { questionId: string }) => {
     try {
       await client.questions.removeQuestion(params);
     } catch (e) {
-      console.error(e);
-      if (e instanceof Meteor.Error) {
-        setError(e as Meteor.Error);
-      } else {
-        setError(new Meteor.Error('Error', 'Unknown error'));
-      }
+      handleError(e);
     }
+    clearError();
     closeModal();
-  };
-
-  const closeModal = () => {
-    setError(null);
-    const modal = document.getElementById(
-      'removal-modal'
-    ) as HTMLDialogElement | null;
-    modal?.close();
   };
 
   return (
     <dialog id="removal-modal" className="modal">
       <div className="modal-box">
+        {error && <div className="alert alert-error mb-4">{error.reason}</div>}
         <h3 className="font-bold text-lg">
           <HiOutlineExclamationCircle className="mx-auto mb-4 h-14 w-14 text-gray-400 dark:text-gray-200" />
           Are you sure you want to remove this question?
