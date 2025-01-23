@@ -19,7 +19,7 @@ export default function AskQuestion() {
             <input
               type="text"
               id="name"
-              value={user.profile.name}
+              value={user?.profile?.name}
               disabled
               className="input input-bordered w-full"
             />

@@ -1,12 +1,11 @@
 import React from 'react';
 import { IoTrashBinOutline } from '@react-icons/all-files/io5/IoTrashBinOutline';
 import { FaCaretUp } from '@react-icons/all-files/fa/FaCaretUp';
-import { Meteor } from 'meteor/meteor';
 import { client } from '../../client';
 import { Question } from '@/api/questions/questions.schema';
 import { Roles } from 'meteor/roles';
 import { useErrorHandler } from '../../hooks/use-error-handler';
-import { useModal } from '@/ui/hooks/use-modal';
+import { useModal } from '../../hooks/use-modal';
 
 interface QuestionListItemProps {
   question: Question;

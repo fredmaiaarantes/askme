@@ -2,7 +2,7 @@ import { HiOutlineExclamationCircle } from '@react-icons/all-files/hi/HiOutlineE
 import React, { FC } from 'react';
 import { client } from '../../client';
 import { useErrorHandler } from '../../hooks/use-error-handler';
-import { useModal } from '@/ui/hooks/use-modal';
+import { useModal } from '../../hooks/use-modal';
 
 interface RemovalConfirmationProps {
   questionId: string;
