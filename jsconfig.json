@@ -39,20 +39,20 @@
         "/Users/fmaia/.meteor/packages/dev-error-overlay/0.1.3/web.browser/client.js"
       ],
       "meteor/mongo": [
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/local_collection_driver.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/collection/collection.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/asynchronous_cursor.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/doc_fetcher.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/mongo_common.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/mongo_connection.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/mongo_driver.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/mongo_utils.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/oplog_observe_driver.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/collection/collection_utils.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/collection/methods_async.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/collection/methods_index.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/collection/methods_replication.js",
-        "/Users/fmaia/.meteor/packages/mongo/2.1.0-beta311.2/web.browser/collection/methods_sync.js"
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/local_collection_driver.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/collection/collection.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/asynchronous_cursor.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/doc_fetcher.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/mongo_common.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/mongo_connection.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/mongo_driver.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/mongo_utils.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/oplog_observe_driver.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/collection/collection_utils.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/collection/methods_async.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/collection/methods_index.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/collection/methods_replication.js",
+        "/Users/fmaia/.meteor/packages/mongo/2.1.0/web.browser/collection/methods_sync.js"
       ],
       "meteor/ecmascript": [
         "/Users/fmaia/.meteor/packages/ecmascript/0.16.10/web.browser/ecmascript.js"
@@ -83,11 +83,11 @@
         "/Users/fmaia/.meteor/packages/refapp_meteor-typescript/0.5.4/web.browser/meteor-typescript-plugin.js"
       ],
       "meteor/roles": [
-        "/Users/fmaia/.meteor/packages/roles/1.0.1-beta311.2/web.browser/roles_client.js",
-        "/Users/fmaia/.meteor/packages/roles/1.0.1-beta311.2/web.browser/roles_common_async.js",
-        "/Users/fmaia/.meteor/packages/roles/1.0.1-beta311.2/web.browser/client/debug.js",
-        "/Users/fmaia/.meteor/packages/roles/1.0.1-beta311.2/web.browser/client/uiHelpers.js",
-        "/Users/fmaia/.meteor/packages/roles/1.0.1-beta311.2/web.browser/roles_server.js"
+        "/Users/fmaia/.meteor/packages/roles/1.0.1/web.browser/roles_client.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.1/web.browser/roles_common_async.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.1/web.browser/client/debug.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.1/web.browser/client/uiHelpers.js",
+        "/Users/fmaia/.meteor/packages/roles/1.0.1/web.browser/roles_server.js"
       ]
     }
   },

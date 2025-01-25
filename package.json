@@ -13,13 +13,13 @@
     "clean-all": "rm -rf node_modules && meteor reset --db"
   },
   "dependencies": {
-    "@babel/runtime": "^7.26.0",
+    "@babel/runtime": "^7.26.7",
     "@react-icons/all-files": "^4.1.0",
-    "@tanstack/react-query": "^5.62.16",
+    "@tanstack/react-query": "^5.64.2",
     "autoprefixer": "^10.4.20",
     "meteor-node-stubs": "^1.2.12",
     "meteor-rpc": "^1.0.0",
-    "postcss": "^8.4.49",
+    "postcss": "^8.5.1",
     "postcss-load-config": "^6.0.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
