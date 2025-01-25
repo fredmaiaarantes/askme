@@ -40,7 +40,7 @@ async function checkLoggedUserAdminOrOwner({ questionId }: QuestionIdInput) {
   if (!question) {
     throw new Meteor.Error(
       'Error',
-      'You cannot remove a question that you do not own.'
+      'Only the owner can delete this question.'
     );
   }
 }
@@ -71,7 +71,7 @@ export const upvoteQuestion = async ({ questionId }: QuestionIdInput) => {
     loggedUserId &&
     question.voters.includes(loggedUserId)
   ) {
-    throw new Meteor.Error('You have already voted on this question.');
+    throw new Meteor.Error("You've already voted on this question.");
   }
 
   return Questions.updateAsync(

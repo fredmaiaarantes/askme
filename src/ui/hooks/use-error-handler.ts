@@ -5,7 +5,6 @@ export const useErrorHandler = () => {
     const [error, setError] = useState<Meteor.Error | null>(null);
 
     const handleError = (e: unknown) => {
-        console.error(e);
         if (e instanceof Meteor.Error) {
             setError(e);
         } else {

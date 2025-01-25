@@ -6,6 +6,7 @@ import { Question } from '@/api/questions/questions.schema';
 import { Roles } from 'meteor/roles';
 import { useErrorHandler } from '../../hooks/use-error-handler';
 import { useModal } from '../../hooks/use-modal';
+import { Error } from '../../../ui/components/error';
 
 interface QuestionListItemProps {
   question: Question;
@@ -20,7 +21,7 @@ export const QuestionListItem: React.FC<QuestionListItemProps> = ({
   loggedUserId,
   setRemovalQuestionId,
 }) => {
-  const { error, handleError } = useErrorHandler();
+  const { error, handleError, clearError } = useErrorHandler();
   const { openModal } = useModal('removal-modal');
   const isOwner = loggedUserId === question.userId;
   const isAdmin = Roles.userIsInRole(loggedUserId, "admin");
@@ -41,7 +42,7 @@ export const QuestionListItem: React.FC<QuestionListItemProps> = ({
 
   return (
     <li className={`py-3 sm:py-4 ${isLast ? 'pb-0 pt-3 sm:pt-4' : ''}`}>
-      {error && <div className="alert alert-error mb-4">{error.reason}</div>}
+      <Error error={error} clearError={clearError} />
       <div className="flex items-center space-x-4">
         <div className="shrink-0 mx-auto max-w-xl text-center">
           <p className="text-xl font-bold text-gray-500 dark:text-gray-400">
