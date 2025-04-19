@@ -24,8 +24,8 @@
         "/Users/fmaia/.meteor/packages/hot-module-replacement/0.5.4/web.browser/server.js"
       ],
       "meteor/react-meteor-data": [
-        "/Users/fmaia/.meteor/packages/react-meteor-data/3.0.2/web.browser/index.js",
-        "/Users/fmaia/.meteor/packages/react-meteor-data/3.0.2/web.browser/suspense/index.js"
+        "/Users/fmaia/.meteor/packages/react-meteor-data/3.0.5-beta.0/web.browser/index.js",
+        "/Users/fmaia/.meteor/packages/react-meteor-data/3.0.5-beta.0/web.browser/suspense/index.js"
       ],
       "meteor/accounts-github": [
         "/Users/fmaia/.meteor/packages/accounts-github/1.5.1/web.browser/notice.js",
