@@ -2,7 +2,7 @@
   "name": "askme-app",
   "private": true,
   "scripts": {
-    "start": "meteor --exclude-archs web.browser.legacy,web.cordova --settings private/settings.json",
+    "start": "meteor --settings private/settings.json",
     "clean-start": "meteor npm run clean-all && meteor npm i && meteor npm run start",
     "test": "meteor test --once --driver-package meteortesting:mocha",
     "test-app": "TEST_WATCH=1 meteor test --full-app --driver-package meteortesting:mocha",
@@ -32,7 +32,9 @@
     "mainModule": {
       "client": "src/ui/main.tsx",
       "server": "src/api/main.ts"
-    }
+    },
+    "modernWebArchsOnly": true,
+    "modernTranspiler": true
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
